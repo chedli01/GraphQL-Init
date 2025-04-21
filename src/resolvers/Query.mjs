@@ -1,5 +1,5 @@
 export const Query={
-    hello: () => 'Hello from Yoga with MJS!',
+    hello: (parent,{name},context,info) => `hello from ${name} `,
     hi:()=> 'hi'
 
 }
