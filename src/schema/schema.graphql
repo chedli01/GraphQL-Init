@@ -24,3 +24,7 @@ type Mutation{
     addUser(id:ID,name:String,email:String):User!
     updateUser(id:String,userInputUpdate:UserUpdateInput):User!
 }
+
+type Subscription {
+  userAdded: User!
+}

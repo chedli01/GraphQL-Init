@@ -1,7 +1,9 @@
 export const Mutation = {
-    addUser:async (parent,{id,name,email},context,info) =>{
+    addUser:async (parent,{id,name,email},{db,pubsub},info) =>{
         const newUser={id,name,email}
-        const result =  await context.db.collection('users').insertOne(newUser)
+        const result =  await db.collection('users').insertOne(newUser)
+        pubsub.publish('user', {userAdded:newUser} )
+
         return newUser
 
 
