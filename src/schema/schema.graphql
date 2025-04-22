@@ -8,6 +8,10 @@ input UserInput {
   id: ID!
   name: String!
 }
+input UserUpdateInput{
+    name:String
+    email:String
+}
 
 type Query {
   hello(user: UserInput): String!
@@ -17,4 +21,5 @@ type Query {
 
 type Mutation{
     addUser(id:ID,name:String,email:String):User!
+    updateUser(id:String,userInputUpdate:UserUpdateInput):User!
 }

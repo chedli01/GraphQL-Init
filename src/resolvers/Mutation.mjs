@@ -5,5 +5,10 @@ export const Mutation = {
         return newUser
 
 
-    }
+    },
+    updateUser: async (parent, { id, userInputUpdate }, context, info) => {
+        await context.db.collection('users').updateOne({ id }, { $set: userInputUpdate });
+        const updatedUser = await context.db.collection('users').findOne({ id });
+        return updatedUser;
+      }
 }
