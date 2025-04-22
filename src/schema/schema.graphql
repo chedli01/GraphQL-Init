@@ -12,6 +12,7 @@ input UserInput {
 type Query {
   hello(user: UserInput): String!
   hi: String!
+  getUsers : [User]!
 }
 
 type Mutation{
