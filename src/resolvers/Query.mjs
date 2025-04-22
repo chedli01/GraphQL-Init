@@ -7,6 +7,9 @@ export const Query={
     getUsers:async (parent,args,{db},info)=>{
         return await db.collection('users').find().toArray()
 
+    },
+    getUser:async (parent,{id},{db},info)=>{
+        return await db.collection('users').findOne({id})
     }
 
 }

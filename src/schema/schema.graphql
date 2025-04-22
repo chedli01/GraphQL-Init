@@ -17,6 +17,7 @@ type Query {
   hello(user: UserInput): String!
   hi: String!
   getUsers : [User]!
+  getUser(id:String):User!
 }
 
 type Mutation{
