@@ -2,7 +2,14 @@ type User {
     id:ID!
     name:String!
     email:String!
+    products:[Product]!
 
+}
+type Product{
+  id:ID!
+  name:String!
+  price:Int!
+  users:[User]!
 }
 input UserInput {
   id: ID!
@@ -14,7 +21,7 @@ input UserUpdateInput{
 }
 
 type Query {
-  hello(user: UserInput): String!
+  hello(name: String): String!
   hi: String!
   getUsers : [User]!
   getUser(id:String):User!
